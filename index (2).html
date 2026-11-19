@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#18244b">
+<title>منصة سي سفيان للتعلّم واللعب</title>
+<style>
+:root{--navy:#18244b;--ink:#202747;--muted:#66708d;--paper:#fff;--bg:#f3f5ff;--pink:#ff668c;--yellow:#ffd45b;--cyan:#63d8df;--violet:#8b79f6;--green:#65c99b}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 10% 5%,#ffe9ef 0,transparent 25%),radial-gradient(circle at 90% 20%,#dffaff 0,transparent 28%),var(--bg);color:var(--ink);line-height:1.7}
+.wrap{max-width:1050px;margin:auto;padding:22px}.hero{background:linear-gradient(125deg,#18244b,#394b86 62%,#7564cb);color:white;border-radius:28px;padding:30px 26px;position:relative;overflow:hidden;box-shadow:0 18px 40px #24315a25}.hero:after{content:"✦";position:absolute;font-size:170px;opacity:.12;left:20px;top:-55px}.tag{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;border-radius:30px;padding:4px 14px;font-size:13px}.hero h1{font-size:clamp(27px,5vw,43px);line-height:1.3;margin:12px 0 6px}.hero p{margin:5px 0;color:#e8eaff}.hadith{margin-top:20px;padding:13px 16px;background:#ffffff14;border-right:4px solid var(--yellow);border-radius:14px;font-size:15px}.motto{color:#ffe17a;font-weight:bold;margin-top:13px}.intro{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:25px 3px 15px}.intro h2{margin:0;font-size:22px}.intro span{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.tile{background:var(--paper);border:1px solid #e7e9f5;border-radius:21px;padding:19px;box-shadow:0 8px 22px #26345c0b;transition:.2s}.tile:hover{transform:translateY(-3px);box-shadow:0 14px 28px #26345c16}.emoji{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:27px;margin-bottom:10px}.tile h3{margin:4px 0;font-size:18px}.tile p{margin:0;color:var(--muted);font-size:14px}.pink{background:#ffe4ec}.yellow{background:#fff1c9}.cyan{background:#dff9fb}.violet{background:#ece8ff}.green{background:#e0f7eb}.blue{background:#e3edff}.challenge{margin-top:22px;background:linear-gradient(110deg,#fff1c9,#fff);border:1px solid #f5dfa0;border-radius:22px;padding:20px}.challenge h2{margin:0 0 5px}.challenge p{margin:0;color:#555c76}.share{margin-top:22px;background:#fff;border-radius:22px;padding:22px;border:1px solid #e7e9f5}.share h2{margin:0 0 6px}.share p{margin:0 0 14px;color:var(--muted);font-size:14px}.share-link{display:inline-block;background:linear-gradient(110deg,#18244b,#6356bd);color:#fff;text-decoration:none;border-radius:14px;padding:12px 22px;font-weight:bold;box-shadow:0 8px 18px #18244b25;transition:.2s}.share-link:hover{transform:translateY(-2px);box-shadow:0 12px 22px #18244b35}.note{font-size:12px;color:#8a6070;margin-top:12px}.footer{text-align:center;padding:22px;color:#6b7390;font-size:13px}.name{font-weight:bold;color:#fff;letter-spacing:1px}
+
+.tile{padding:12px;overflow:hidden}.tile .tile-image{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:15px;margin-bottom:12px}.tile h3{padding:0 7px}.tile p{padding:0 7px 5px}
+
+/* New interactive learning spaces */
+.tile-link{display:block;color:inherit;text-decoration:none}
+.tile-link:focus-visible,.action:focus-visible,button:focus-visible{outline:3px solid #ffd45b;outline-offset:3px}
+.learning-space{margin-top:22px;background:#fff;border:1px solid #e7e9f5;border-radius:24px;padding:22px;scroll-margin-top:18px}
+.learning-space h2{margin:0 0 7px}
+.learning-space .lead{margin:0 0 16px;color:var(--muted);font-size:14px}
+.space-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mini-card{background:#f7f8ff;border:1px solid #e8eaf6;border-radius:17px;padding:15px}
+.mini-card h3{font-size:16px;margin:0 0 6px}
+.mini-card p,.mini-card li{font-size:14px;color:#4e5876}
+.mini-card ul{padding-right:20px;margin:8px 0}
+.activity{background:linear-gradient(120deg,#eef8ff,#f5f1ff);border:1px solid #dfe8ff;border-radius:18px;padding:17px;margin-top:14px}
+.activity label{display:block;font-weight:bold;margin:8px 0 5px}
+.activity textarea{width:100%;min-height:95px;border:1px solid #d8dcef;border-radius:12px;padding:11px;font:inherit;resize:vertical}
+.action{display:inline-block;border:0;border-radius:12px;padding:10px 17px;background:#394b86;color:#fff;font:inherit;font-weight:bold;cursor:pointer;margin-top:9px}
+.action.secondary{background:#e9edff;color:#26345c}
+.feedback{font-weight:bold;margin-top:10px;min-height:25px}
+.quiz-option{display:block;background:#fff;border:1px solid #e2e6f3;border-radius:12px;padding:9px 12px;margin:7px 0;cursor:pointer}
+.quiz-option input{margin-left:8px}
+.small-note{font-size:12px;color:#747d98;margin-top:10px}
+@media(max-width:600px){.learning-space{padding:16px}.activity{padding:13px}}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<span class="tag">فضاء الإبداع والاكتشاف</span>
+<h1>منصة سي سفيان<br>للتعلّم واللعب</h1>
+<p class="name">ATALLAH SOFIEN</p>
+<p>هنا نتعلّم بالتجربة، ونحوّل أفكارنا إلى إنجازات!</p>
+<div class="hadith">قال رسول الله ﷺ: «مَن سلك طريقًا يلتمس فيه علمًا، سهّل الله له به طريقًا إلى الجنة» — رواه مسلم.</div>
+<div class="motto">فكّر، خطّط، ثم أنجز ✨</div>
+</section>
+<div class="intro"><h2>اختر مغامرتك التعليمية</h2><span>السادسة ابتدائي – اللغة الفرنسية</span></div>
+<section class="grid">
+<article class="tile"><img class="tile-image" src="images/speaking-french.jpg" alt="طفل يتحدث بالفرنسية"><h3>أتحدث بالفرنسية</h3><p>تحدّث، عبّر عن رأيك، وتدرّب على مواقف من الحياة اليومية.</p></article>
+<article class="tile"><img class="tile-image" src="images/play-and-learn.jpg" alt="اللعب والتعلم"><h3>ألعب وأتعلم</h3><p>ألعاب لغوية، ألغاز، ومسابقات في القواعد والمفردات.</p></article>
+<article class="tile"><a class="tile-link" href="#write-story"><img class="tile-image" src="images/create-story.jpg" alt="تلميذ يكتب قصة بالفرنسية"><h3>✍️ J’écris mon histoire</h3><p>أكتب قصتي بالفرنسية: أختار الشخصيات والمكان والأحداث وأبتكر نهاية.</p></a></article>
+<article class="tile"><a class="tile-link" href="#young-journalist"><img class="tile-image" src="images/speaking-french.jpg" alt="تلميذ يجري حواراً صحفياً"><h3>🎤 Jeune journaliste</h3><p>أُجري حواراً صحفياً بالفرنسية: أُحضّر الأسئلة وأكتب الأجوبة.</p></a></article>
+<article class="tile"><div class="emoji violet">🎨</div><h3>أصمّم وأبتكر</h3><p>أنجز ملصقاً أو بطاقة أو مشروعاً يعكس أفكارك.</p></article>
+<article class="tile"><div class="emoji green">🔬</div><h3>مختبر التجارب</h3><p>لاحظ، جرّب، اسأل، واكتشف العالم من حولك.</p></article>
+<article class="tile"><div class="emoji blue">🌱</div><h3>مشاريع بقية السنوات</h3><p>مساحة لمشاريع وأنشطة مختارة لبقية السنوات الابتدائية.</p></article>
+
+<article class="tile">
+<a class="tile-link" href="#future-school">
+<div class="emoji yellow">🚀</div><h3>مدرستي في المستقبل</h3>
+<p>تخيّل مدرستك المثالية، وصمّم أفكارًا تجعل التعلّم أجمل.</p>
+</a></article>
+<article class="tile">
+<a class="tile-link" href="#learn-deen">
+<div class="emoji green">🌙</div><h3>تعلّم دينك</h3>
+<p>نتعرّف إلى أساسيات الطهارة والصلاة والصيام والأخلاق بالمحبّة والفهم.</p>
+</a></article>
+</section>
+
+
+<section class="learning-space" id="write-story">
+<h2>✍️ J’écris mon histoire – أكتب قصتي بالفرنسية</h2>
+<p class="lead">أنت الكاتب! ابتكر حكاية قصيرة من خيالك. ابدأ بفكرة بسيطة، ثم رتّب الأحداث واكتب نهاية جميلة.</p>
+<div class="space-grid">
+<div class="mini-card"><h3>1. Je prépare mon histoire</h3><ul><li>Les personnages : Qui ?</li><li>Le lieu : Où ?</li><li>Le moment : Quand ?</li><li>Le problème : Que se passe-t-il ?</li><li>La solution : Comment se termine l’histoire ?</li></ul></div>
+<div class="mini-card"><h3>2. Des mots pour m’aider</h3><p><strong>Pour commencer :</strong> Un jour, Il était une fois, Hier…</p><p><strong>Pour continuer :</strong> Soudain, ensuite, puis, tout à coup…</p><p><strong>Pour terminer :</strong> Enfin, finalement, depuis ce jour…</p></div>
+<div class="mini-card"><h3>3. Je vérifie</h3><ul><li>J’ai choisi un titre.</li><li>J’ai utilisé des phrases complètes.</li><li>J’ai respecté l’ordre des événements.</li><li>J’ai vérifié les majuscules et les points.</li></ul></div>
+</div>
+<div class="activity">
+<label for="storyTitle">Le titre de mon histoire :</label><input id="storyTitle" type="text" placeholder="Exemple : Une rencontre extraordinaire" style="width:100%;border:1px solid #d8dcef;border-radius:12px;padding:11px;font:inherit">
+<label for="storyText">J’écris mon histoire :</label><textarea id="storyText" placeholder="Un jour, ...
+
+Soudain, ...
+
+Enfin, ..." style="min-height:190px"></textarea>
+<button class="action" type="button" onclick="copyProject('story')">أنسخ قصتي لإرسالها</button><a class="action secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScxAQH8rPZoCl0ADcZ5-lclHZL0-XwZaDLwkzn07c7iaGNMbg/viewform" target="_blank" rel="noopener noreferrer">أفتح استمارة الإرسال ↗</a>
+<div class="feedback" id="storyFeedback" aria-live="polite"></div>
+<p class="small-note">انسخ نصك أولاً، ثم افتح الاستمارة والصقه في خانة «Réponse de l’élève». لا تُرسل كتابتك تلقائياً من هذه الصفحة.</p>
+</div>
+</section>
+
+<section class="learning-space" id="young-journalist">
+<h2>🎤 Jeune journaliste – صحفي صغير</h2>
+<p class="lead">تخيّل أنك صحفي في مجلة مدرسية! اختر شخصية تحبّ التعرّف إليها، حضّر أسئلتك، ثم اكتب الحوار بالفرنسية.</p>
+<div class="space-grid">
+<div class="mini-card"><h3>1. Je choisis mon invité</h3><p>Un médecin, un sportif, un artiste, un enseignant, un agriculteur ou un personnage imaginaire.</p></div>
+<div class="mini-card"><h3>2. Je prépare mes questions</h3><p>Comment vous appelez-vous ? Quel est votre métier ? Pourquoi aimez-vous ce métier ? Quelle est votre plus belle expérience ? Quel conseil donnez-vous aux enfants ?</p></div>
+<div class="mini-card"><h3>3. Je mène l’interview</h3><p>Bonjour ! Merci d’accepter notre interview. — Bonjour ! C’est avec plaisir. — … — Merci pour vos réponses. Au revoir !</p></div>
+</div>
+<div class="activity">
+<label for="guestName">Le nom ou le rôle de mon invité :</label><input id="guestName" type="text" placeholder="Exemple : Un jeune footballeur" style="width:100%;border:1px solid #d8dcef;border-radius:12px;padding:11px;font:inherit">
+<label for="interviewText">J’écris mon interview (questions et réponses) :</label><textarea id="interviewText" placeholder="Le journaliste : Bonjour !
+L’invité : Bonjour !
+Le journaliste : Comment vous appelez-vous ?
+L’invité : ..." style="min-height:190px"></textarea>
+<button class="action" type="button" onclick="copyProject('interview')">أنسخ حواري لإرساله</button><a class="action secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScxAQH8rPZoCl0ADcZ5-lclHZL0-XwZaDLwkzn07c7iaGNMbg/viewform" target="_blank" rel="noopener noreferrer">أفتح استمارة الإرسال ↗</a>
+<div class="feedback" id="interviewFeedback" aria-live="polite"></div>
+<p class="small-note">انسخ الحوار أولاً، ثم افتح الاستمارة والصقه في خانة «Réponse de l’élève». لا تُرسل كتابتك تلقائياً من هذه الصفحة.</p>
+</div>
+</section>
+
+<section class="learning-space" id="future-school">
+<h2>🚀 مدرستي في المستقبل</h2>
+<p class="lead">مساحة للخيال والتصميم والتعبير. لا توجد إجابة واحدة صحيحة؛ لكل طفل فكرة تستحق أن نسمعها.</p>
+<div class="space-grid">
+<div class="mini-card"><h3>1. ألاحظ وأتخيّل</h3><p>ما الذي يجعل المدرسة مكانًا ممتعًا وآمنًا؟ فكّر في المكتبة، والحديقة، والمختبر، وفضاء اللعب.</p></div>
+<div class="mini-card"><h3>2. أصمّم</h3><p>ارسم مخطّطًا بسيطًا لمدرستك، واكتب أسماء ثلاثة فضاءات تريد إضافتها.</p></div>
+<div class="mini-card"><h3>3. أقدّم مشروعي</h3><p>اكتب جملًا قصيرة تشرح فيها فكرتك، وكيف تساعد زملاءك على التعلّم والتعاون.</p></div>
+</div>
+<div class="activity">
+<label for="futureStudentName">اسم التلميذ ولقبه:</label>
+<input id="futureStudentName" type="text" autocomplete="name" placeholder="اكتب اسمك ولقبك">
+<label for="futureClass">القسم:</label>
+<input id="futureClass" type="text" placeholder="مثال: السادسة ب">
+<label for="futureIdea">اكتب فكرة واحدة لمدرستك في المستقبل:</label>
+<textarea id="futureIdea" placeholder="Dans mon école du futur, il y aura..."></textarea>
+<button class="action" type="button" onclick="sendFutureIdea()">أرسل فكرتي</button>
+<div class="feedback" id="futureFeedback" aria-live="polite"></div>
+<p class="small-note">ستُفتح استمارة المشاركة معبّأة ببياناتك وفكرتك. راجعها ثم اضغط «إرسال» لإيصالها إلى المعلّم.</p>
+</div>
+</section>
+
+<section class="learning-space" id="learn-deen">
+<h2>🌙 تعلّم دينك</h2>
+<p class="lead">نتعلّم أساسيات العبادة بهدوء ومحبة واحترام، خطوةً خطوة. اسأل معلّمك أو أسرتك إذا احتجت إلى توضيح.</p>
+<div class="space-grid">
+<div class="mini-card">
+<h3>💧 الطهارة والوضوء</h3>
+<p>الطهارة من الأمور المهمة للمسلم. نتعلّم الوضوء عمليًا مع مراعاة الترتيب الذي يعلّمنا إياه المعلّم والأسرة.</p>
+<ul><li>أستعدّ للصلاة بالطهارة.</li><li>أتعلم غسل أعضاء الوضوء بالترتيب.</li><li>أحافظ على الماء ولا أُسرف فيه.</li></ul>
+</div>
+<div class="mini-card">
+<h3>🕌 الصلاة</h3>
+<p>الصلاة عبادة عظيمة، وهي صلة بين العبد وربّه.</p>
+<ul><li>أتعرّف إلى الصلوات الخمس وأوقاتها.</li><li>أتعلم الاستعداد للصلاة واستقبال القبلة.</li><li>أتدرّب على أفعال الصلاة وأقوالها مع معلّمي.</li></ul>
+</div>
+<div class="mini-card">
+<h3>🌙 الصيام</h3>
+<p>الصيام عبادة نتعلّم من خلالها الصبر والتقوى ومراعاة الآخرين.</p>
+<ul><li>أتعرف إلى شهر رمضان.</li><li>أفهم معنى الإمساك عن المفطرات من الفجر إلى المغرب.</li><li>أشارك في أعمال الخير وأحترم قدرة كل شخص وظروفه.</li></ul>
+</div>
+<div class="mini-card">
+<h3>🤲 الدعاء والذكر</h3>
+<p>أدعو الله بكلمات طيبة، وأذكره في أوقاتي، وأتعلم آداب الدعاء.</p>
+<ul><li>أبدأ بالحمد والثناء على الله.</li><li>أدعو بأدب وخشوع.</li><li>أحفظ أذكارًا قصيرة صحيحة مع أسرتي أو معلّمي.</li></ul>
+</div>
+<div class="mini-card">
+<h3>💚 الصدقة والإحسان</h3>
+<p>العبادة تظهر أيضًا في أعمال الخير: أساعد، وأشارك، وأحسن إلى الناس.</p>
+<ul><li>أساعد من يحتاج إلى المساعدة.</li><li>أحافظ على نظافة محيطي.</li><li>أعامل الناس بالرفق والاحترام.</li></ul>
+</div>
+<div class="mini-card">
+<h3>⭐ حسن الخلق</h3>
+<p>من الأخلاق الجميلة: الصدق، والأمانة، والرحمة، واحترام الوالدين، والتعاون.</p>
+<ul><li>أقول الصدق.</li><li>أحفظ الأمانة.</li><li>أعتذر إذا أخطأت.</li></ul>
+</div>
+</div>
+
+<div class="activity" id="deenQuiz">
+<h3>🎮 اختبر معلوماتك</h3>
+<p>اختر الإجابة الصحيحة في كل سؤال، ثم اضغط على «تحقّق من إجاباتي».</p>
+<form id="deenQuizForm">
+<p><strong>1. كم عدد الصلوات المفروضة في اليوم والليلة؟</strong></p>
+<label class="quiz-option"><input type="radio" name="q1" value="a"> ثلاث صلوات</label>
+<label class="quiz-option"><input type="radio" name="q1" value="b"> خمس صلوات</label>
+<label class="quiz-option"><input type="radio" name="q1" value="c"> سبع صلوات</label>
+<p><strong>2. في أي شهر يصوم المسلمون صيام رمضان؟</strong></p>
+<label class="quiz-option"><input type="radio" name="q2" value="a"> رمضان</label>
+<label class="quiz-option"><input type="radio" name="q2" value="b"> شوّال</label>
+<label class="quiz-option"><input type="radio" name="q2" value="c"> محرّم</label>
+<p><strong>3. أيّ تصرّف يعبّر عن حسن الخلق؟</strong></p>
+<label class="quiz-option"><input type="radio" name="q3" value="a"> السخرية من الآخرين</label>
+<label class="quiz-option"><input type="radio" name="q3" value="b"> إهمال مساعدة المحتاج</label>
+<label class="quiz-option"><input type="radio" name="q3" value="c"> الصدق ومساعدة الآخرين</label>
+<button class="action" type="button" onclick="checkDeenQuiz()">تحقّق من إجاباتي</button>
+<button class="action secondary" type="reset" onclick="document.getElementById('deenFeedback').textContent=''">إعادة المحاولة</button>
+<div class="feedback" id="deenFeedback" aria-live="polite"></div>
+</form>
+</div>
+<p class="small-note">ملاحظة تربوية: هذا الركن مدخل مبسّط للتعلّم، وليس بديلًا عن التعلّم مع الأسرة والمعلّمين. تُعرض مسائل العبادة بتدرّج، وتُراجع التفاصيل الفقهية وفق البرنامج المعتمد والمصادر الموثوقة.</p>
+</section>
+
+<section class="challenge"><h2>🎯 تحدّي المبدع</h2><p>اختر شيئاً تعلّمته هذا الأسبوع، وابتكر جملة أو رسماً أو قصة قصيرة تشرح به فكرتك. الإبداع يبدأ بفكرة!</p></section>
+<section class="share">
+<h2>📮 صندوق مشاركة المبدعين</h2>
+<p>هل أنجزت نشاطاً أو مشروعاً؟ اضغط على الزر لفتح استمارة المشاركة، ثم اكتب اسمك وقسمك وإجابتك وأرسلها.</p>
+<a class="share-link" href="https://docs.google.com/forms/d/e/1FAIpQLScxAQH8rPZoCl0ADcZ5-lclHZL0-XwZaDLwkzn07c7iaGNMbg/viewform" target="_blank" rel="noopener noreferrer">إرسال المشاركة الآن ↗</a>
+<div class="note">حماية خصوصية التلاميذ أولوية. لا تكتبوا معلومات شخصية حساسة؛ تُرسل الإجابات عبر استمارة Google Forms.</div>
+</section>
+<footer class="footer">منصة سي سفيان للتعلّم واللعب · ATALLAH SOFIEN<br>نتعلّم لنبدع، ونبدع لنبني المستقبل 💡</footer>
+</main>
+
+<script>
+function copyProject(type){
+  const isStory=type==='story';
+  const title=isStory?document.getElementById('storyTitle').value.trim():document.getElementById('guestName').value.trim();
+  const body=isStory?document.getElementById('storyText').value.trim():document.getElementById('interviewText').value.trim();
+  const feedback=document.getElementById(isStory?'storyFeedback':'interviewFeedback');
+  if(!body){feedback.textContent='اكتب إنتاجك أولاً ثم انسخه.';return;}
+  const content=(isStory?'J’écris mon histoire':'Jeune journaliste')+'\n'+(title?title+'\n':'')+'\n'+body;
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(content).then(()=>feedback.textContent='تم نسخ إنتاجك. افتح الاستمارة والصقه في خانة الإجابة. ✓').catch(()=>fallbackCopy(content,feedback));
+  }else{fallbackCopy(content,feedback);}
+}
+function fallbackCopy(content,feedback){
+  const temp=document.createElement('textarea');temp.value=content;document.body.appendChild(temp);temp.select();
+  try{document.execCommand('copy');feedback.textContent='تم نسخ إنتاجك. افتح الاستمارة والصقه في خانة الإجابة. ✓';}
+  catch(e){feedback.textContent='تعذّر النسخ التلقائي. حدّد النص وانسخه يدوياً.';}
+  temp.remove();
+}
+
+function sendFutureIdea(){
+  const name=document.getElementById('futureStudentName').value.trim();
+  const studentClass=document.getElementById('futureClass').value.trim();
+  const idea=document.getElementById('futureIdea').value.trim();
+  const feedback=document.getElementById('futureFeedback');
+  if(!name){feedback.textContent='اكتب اسمك ولقبك أولًا.';return;}
+  if(!studentClass){feedback.textContent='اكتب قسمك أولًا.';return;}
+  if(!idea){feedback.textContent='اكتب فكرتك أولًا.';return;}
+  try{localStorage.setItem('sofienFutureSchoolIdea',idea);}
+  catch(e){}
+  const formUrl=new URL('https://docs.google.com/forms/d/e/1FAIpQLScxAQH8rPZoCl0ADcZ5-lclHZL0-XwZaDLwkzn07c7iaGNMbg/viewform');
+  formUrl.searchParams.set('usp','pp_url');
+  formUrl.searchParams.set('entry.1576302065','المرحلة الابتدائية');
+  formUrl.searchParams.set('entry.691956506',name);
+  formUrl.searchParams.set('entry.274902559',studentClass);
+  formUrl.searchParams.set('entry.998863958','production écrite');
+  formUrl.searchParams.set('entry.255208468','مدرستي في المستقبل: '+idea);
+  feedback.textContent='ستُفتح الاستمارة الآن. راجع بياناتك وفكرتك ثم اضغط «إرسال» لإتمام المشاركة.';
+  window.open(formUrl.toString(),'_blank','noopener');
+}
+function checkDeenQuiz(){
+  const answers={q1:'b',q2:'a',q3:'c'};
+  let score=0,answered=0;
+  for(const [name,correct] of Object.entries(answers)){
+    const chosen=document.querySelector('input[name="'+name+'"]:checked');
+    if(chosen){answered++;if(chosen.value===correct)score++;}
+  }
+  const out=document.getElementById('deenFeedback');
+  if(answered<3){out.textContent='أجب عن الأسئلة الثلاثة أولًا. أجبت عن '+answered+' من 3.';return;}
+  out.textContent='نتيجتك: '+score+' من 3. '+(score===3?'ممتاز! أحسنت 🌟':score===2?'عمل جيد! راجع السؤال الذي أخطأت فيه.':'لا بأس، تعلّم ثم أعد المحاولة. 💚');
+}
+
+// استرجاع فكرة التلميذ المحفوظة سابقًا على الجهاز عند فتح المنصة.
+document.addEventListener('DOMContentLoaded', function () {
+  const field = document.getElementById('futureIdea');
+  if (!field) return;
+  try {
+    const savedIdea = localStorage.getItem('sofienFutureSchoolIdea');
+    if (savedIdea) field.value = savedIdea;
+  } catch (e) {
+    // تظل المنصة قابلة للاستعمال حتى إذا كان التخزين المحلي غير متاح.
+  }
+});
+
+</script>
+
+</body></html>
